@@ -1,8 +1,8 @@
 {
   "name": "json-bigint-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON.parse with bigints support",
-  "main": "dist/core.js",
+  "main": "dist/index.js",
   "files": [
     "dist/"
   ],
