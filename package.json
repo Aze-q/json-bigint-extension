@@ -1,5 +1,5 @@
 {
-  "name": "json-bigint-extension",
+  "name": "json-bigint-extend",
   "version": "1.0.1",
   "description": "JSON.parse with bigints support",
   "main": "dist/index.js",
@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js",
-    "build": "rollup -c && node obfuscate.js"
+    "build": "rollup -c && node obfuscate.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,19 @@
   "author": "Andrey Sidorov <andrey.sidorov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bignumber.js": "^9.0.0"
+    "async_hooks": "^1.0.0",
+    "bignumber.js": "^9.0.0",
+    "vm": "^0.1.0"
+  },
+  "peerDependencies": {
+    "axios": ">= 1.x",
+    "express": ">= 4.x",
+    "methods": ">= 1.x"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
+    "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "chai": "4.2.0",
