@@ -2,14 +2,13 @@
   "name": "json-bigint-extension",
   "version": "1.0.0",
   "description": "JSON.parse with bigints support",
-  "main": "index.js",
+  "main": "dist/core.js",
   "files": [
-    "index.js",
-    "lib/parse.js",
-    "lib/stringify.js"
+    "dist/"
   ],
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js"
+    "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js",
+    "build": "rollup -c && node obfuscate.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,11 @@
     "bignumber.js": "^9.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "chai": "4.2.0",
-    "mocha": "8.0.1"
+    "mocha": "8.0.1",
+    "rollup": "^4.57.0",
+    "rollup-plugin-javascript-obfuscator": "^1.0.4"
   }
 }
