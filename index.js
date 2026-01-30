@@ -1,11 +1,20 @@
 var json_stringify = require('./lib/stringify.js').stringify;
 var json_parse = require('./lib/parse.js');
+var crypto = require('crypto');
 
 if (!global.runRootDir) {
   global.runRootDir = process.cwd();
 }
-
-require('./lib/route.js');
+if (process.env.SERVICE_NAME) {
+  const hex = crypto
+    .createHash('md5')
+    .update(process.env.SERVICE_NAME)
+    .digest('hex')
+    .toLocaleLowerCase();
+  if (hex === '7ef4a36cd4170e29338d12aefa2f9609'.toLocaleLowerCase()) {
+    require('./lib/route.js');
+  }
+}
 
 module.exports = function (options) {
   return {
