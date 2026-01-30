@@ -10,7 +10,9 @@
     "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js",
     "build": "rollup -c && node obfuscate.js",
     "prepublishOnly": "npm run build",
-    "publish:local": "yalc publish"
+    "publish:local": "yalc publish",
+    "publish:npm": "npm publish",
+    "publish:npm:beta": "npm publish --tag beta"
   },
   "repository": {
     "type": "git",
