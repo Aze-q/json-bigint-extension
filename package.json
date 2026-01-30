@@ -1,6 +1,6 @@
 {
   "name": "json-bigint-extend",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JSON.parse with bigints support",
   "main": "dist/index.js",
   "files": [
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*-test.js",
     "build": "rollup -c && node obfuscate.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish:local": "yalc publish"
   },
   "repository": {
     "type": "git",
